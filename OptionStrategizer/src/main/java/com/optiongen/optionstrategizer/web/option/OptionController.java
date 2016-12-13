@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 
 @Controller
+@RequestMapping(value = "/option/")
 public class OptionController {
 
     @Autowired
@@ -30,7 +31,7 @@ public class OptionController {
 
     private static final Logger logger = LoggerFactory.getLogger(OptionController.class);
 
-    @RequestMapping(value = "/option/expirations",
+    @RequestMapping(value = "expirations",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody OptionExpirations getOptionExpirations(@RequestParam("symbol") String symbol) {
@@ -45,7 +46,7 @@ public class OptionController {
         return optionExpirations;
     }
 
-    @RequestMapping(value = "/option/chain",
+    @RequestMapping(value = "chain",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody OptionChain getOptionChain(@RequestParam("symbol") String symbol, @RequestParam("expiry") String expiry) {
