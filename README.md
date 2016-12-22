@@ -30,3 +30,8 @@ http://localhost:8080/option-strategizer/option/chain?symbol=aapl&expiry=2017-01
 GET
 http://localhost:8080/option-strategizer/option/expirations?symbol=msft
 
+
+
+
+
+Inside "option-strategizer.properties", please input own token
