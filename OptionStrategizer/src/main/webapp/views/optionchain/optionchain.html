@@ -1,20 +1,43 @@
-<table class="table table-hover">
+<div class="jumbotron" style="text-align:center">
+    <h1>Option Chain</h1>
+</div>
+
+<form class="ocForm" ng-submit="getOptionChain()">
+    <input  ng-model="underlyingSymbol" type="text" class="form-control mb-2 mr-sm-2  ocFormFields" id="inlineFormInput" placeholder="AAPL" required>
+    <select ng-model="expiry" ng-options="x for x in optionExpirations" ng-show="showExpirations" class="ocFormFields" required></select>
+    <button class="btn btn-primary" style="margin-left:35%" type="submit">Submit</button>
+</form>
+
+<table class="table table-hover ocTable" ng-show="showOptionChain">
     <thead>
     <tr>
-        <th>Symbol</th>
-        <th>Expiration</th>
-        <th>Strike</th>
+        <td colspan="4"><h3>Calls</h3></td>
+        <td><h3>{{underlyingSymbol}}@{{expiry}}</h3></td>
+        <td colspan="4"><h3>Puts</h3></td>
+    </tr>
+    <tr class="ocTableHeaders">
         <th>Description</th>
-        <th>Option Type</th>
+        <th>Last</th>
+        <th>Bid</th>
+        <th>Ask</th>
+        <th>Strike</th>
+        <th>Bid</th>
+        <th>Ask</th>
+        <th>Last</th>
+        <th>Description</th>
     </tr>
     </thead>
     <tbody>
     <tr ng-repeat="option in optionChain">
-        <td>{{option.symbol}}</td>
-        <td>{{option.expiry}}</td>
-        <td>{{option.strike}}</td>
-        <td>{{option.description}}</td>
-        <td>{{option.optionType}}</td>
+        <td>{{option.call.description}}</td>
+        <td>{{option.call.last}}</td>
+        <td>{{option.call.bid}}</td>
+        <td>{{option.call.ask}}</td>
+        <td>{{option.call.strike}}</td>
+        <td>{{option.put.bid}}</td>
+        <td>{{option.put.ask}}</td>
+        <td>{{option.put.last}}</td>
+        <td>{{option.put.description}}</td>
     </tr>
     </tbody>
 </table>

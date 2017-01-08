@@ -1,5 +1,7 @@
 package com.optiongen.optionstrategizer.domain.option;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -7,20 +9,21 @@ import java.util.List;
  */
 public class OptionChain {
 
-    List<Option> options;
+    @SerializedName("option_pairs")
+    private List<OptionChainPair> optionPairs;
 
-    public List<Option> getOptions() {
-        return options;
+    public List<OptionChainPair> getOptionPairs() {
+        return optionPairs;
     }
 
-    public void setOptions(List<Option> options) {
-        this.options = options;
+    public void setOptionPairs(List<OptionChainPair> optionPairs) {
+        this.optionPairs = optionPairs;
     }
 
     @Override
     public String toString() {
         return "OptionChain{" +
-                "options=" + options +
+                "optionPairs=" + optionPairs +
                 '}';
     }
 }

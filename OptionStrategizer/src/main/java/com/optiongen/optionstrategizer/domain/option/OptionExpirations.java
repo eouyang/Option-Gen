@@ -8,7 +8,7 @@ import java.util.List;
 
 public class OptionExpirations {
 
-    List<String> expirations;
+    private List<String> expirations;
 
     public List<String> getExpirations() {
         return expirations;
