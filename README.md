@@ -10,9 +10,8 @@
 
 # How to Start Application
 
-1. inside root directory (OptionStrategizer), run command "mvn clean install jetty:run"
-2. inside "/src/webapp" run command "npm install" to install necessary modules
-3. inside "/src/webapp" run command "npm start"
+1. inside "/src/webapp" run command "npm install" to install necessary modules
+2. inside "/src/webapp" run command "npm start"
 
 You may access page through "localhost:8080 or localhost:3000"
 
